@@ -1,0 +1,5 @@
+Message Hello! Welcome to demofile.txt
+ Partition1 Offset25
+Message This file is for testing purposes.
+ Partition1 Offset26
+Message Good Luck! Partition2 Offset34

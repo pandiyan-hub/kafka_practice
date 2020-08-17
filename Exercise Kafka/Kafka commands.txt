@@ -1,0 +1,33 @@
+Server name: 10.100.105.51
+User name   : practice
+Passwd      : OOT@123
+
+
+[practice@otusdphdp1 ~]$ cd /usr/hdp/current/kafka-broker
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating Topic
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-topics.sh --create --zookeeper otusdphdp3:2181 --replication-factor 1 --partitions 1 --topic ksrawat_test1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating Producer
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-console-producer.sh --broker-list otusdphdp3:6667 --topic ksrawat_test1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating Consumer
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-console-consumer.sh --bootstrap-server otusdphdp3:6667 --topic ksrawat_test1 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+creatiing Consumer from beginning
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-console-consumer.sh --bootstrap-server otusdphdp3:6667 --topic ksrawat_test1 --from-beginning
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Describe topic
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-topics.sh --describe --zookeeper otusdphdp3:2181 --topic ksrawat_test1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Alter topic
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-topics.sh --alter --zookeeper otusdphdp3:2181 --topic ksrawat_test1 --partitions 3 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Key point we can not decrease partitions once it is increased in alter , replication-factor can not be alter once it is created
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Get the offset value of msg
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-console-consumer.sh --bootstrap-server otusdphdp3:6667 --topic ksrawat_test1 --time -1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Get the msg on base of offset and partition
+[practice@otusdphdp1 kafka-broker]$ bin/kafka-console-consumer.sh --bootstrap-server otusdphdp3:6667 --topic ksrawat_test1 --offset 0 --partition 0
+-----------------------------------------------------------------------------------------------------------------------------------------------------------

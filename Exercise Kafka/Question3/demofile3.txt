@@ -1,0 +1,3 @@
+Message Hello! Welcome to demofile.txt
+Partition1Offset30
+Message Good Luck!Partition2Offset42
