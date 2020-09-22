@@ -1,8 +1,3 @@
-Server name: 10.100.105.51
-User name   : practice
-Passwd      : OOT@123
-
-
 [practice@otusdphdp1 ~]$ cd /usr/hdp/current/kafka-broker
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 Creating Topic
